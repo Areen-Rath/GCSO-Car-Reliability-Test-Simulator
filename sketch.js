@@ -1,5 +1,4 @@
 var car, wall;
-var distribution;
 
 var speed, weight, deformation;
 

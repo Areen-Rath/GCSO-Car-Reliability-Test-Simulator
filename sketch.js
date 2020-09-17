@@ -1,18 +1,24 @@
+//Declaring variables for car and wall.
 var car, wall;
 
+//Declaring variables for speed, weight and deformation.
 var speed, weight, deformation;
 
 function setup(){
 
+    //Creating canvas.
     createCanvas(1600, 400);
 
+    //Setting random speed and weight. Putting formula for deformation.
     speed = Math.round(random(55, 90));
     weight = Math.round(random(400, 1500));
     deformation = (0.5 * weight * Math.pow(speed, 2))/22500;
 
+    //Creating wall and giving it color.
     wall = createSprite(1500, 200, 60, height/2);
     wall.shapeColor = color(80, 80, 80);
     
+    //Creating car, giving it color and moving it.
     car = createSprite(50, 200, 50, 50);
     car.shapeColor = "white";
     car.velocityX = speed;
@@ -21,8 +27,10 @@ function setup(){
 
 function draw(){
 
+    //Hiding multiple sprites.
     background(0);
 
+    //Stopping the car, changing the color of it and showing it.
     if(car.x - wall.x < car.width/2 + wall.width/2 && wall.x - car.x < car.width/2 + wall.width/2){
       car.velocityX = 0;
 
